@@ -45,7 +45,6 @@ async function getBooksAndMoviesAsync() {
 }
 
 async function getBooksOrMoviesAsync() {
-    debugger;
     try {
         const values = await Promise.race([
             asyncFetchBooks(),
@@ -59,13 +58,13 @@ async function getBooksOrMoviesAsync() {
 
 getBooksAndMoviesAsync().then(results => {
     console.log('movies AND books', {
-        movies: results.movies,
-        books: results.books,
+        movies: results?.movies,
+        books: results?.books,
     });
 });
 
 getBooksOrMoviesAsync().then(results => {
     console.log('movies OR books', {
-        results
+        results,
     });
 });
