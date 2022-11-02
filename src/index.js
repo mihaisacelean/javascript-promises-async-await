@@ -34,10 +34,10 @@ async function getBooksAndMoviesAsync() {
             asyncFetchBooks(),
             asyncFetchMovies()
         ]);
-        return {
+        return [
             books,
             movies
-        };
+        ];
     } catch (error) {
         console.log("Error fetching books and movies", error);
         return error;
@@ -45,6 +45,7 @@ async function getBooksAndMoviesAsync() {
 }
 
 async function getBooksOrMoviesAsync() {
+    debugger;
     try {
         const values = await Promise.race([
             asyncFetchBooks(),
