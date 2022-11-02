@@ -34,7 +34,10 @@ async function getBooksAndMoviesAsync() {
             asyncFetchBooks(),
             asyncFetchMovies()
         ]);
-        return {books, movies};
+        return {
+            books,
+            movies
+        };
     } catch (error) {
         console.log("Error fetching books and movies", error);
         return error;
